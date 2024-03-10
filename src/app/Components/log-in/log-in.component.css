@@ -1,0 +1,6 @@
+.forgetpass p a {
+  font-style: italic;
+}
+.forgetpass p a:hover {
+  color: #0aad0a;
+}

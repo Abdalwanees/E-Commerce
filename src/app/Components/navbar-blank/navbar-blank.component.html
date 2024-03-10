@@ -1,0 +1,147 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" #navbar>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="home">
+      <img src="./assets/images/freshcart-logo.svg" alt="LOGO" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link fs-6 fw-semibold text-capitalize"
+            routerLink="home"
+            routerLinkActive="active-link"
+            >home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-6 fw-semibold text-capitalize"
+            routerLink="cart"
+            routerLinkActive="active-link"
+            >cart</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-6 fw-semibold text-capitalize"
+            routerLink="products"
+            routerLinkActive="active-link"
+            >products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-6 fw-semibold text-capitalize"
+            routerLink="categories"
+            routerLinkActive="active-link"
+            >categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-6 fw-semibold text-capitalize"
+            routerLink="brands"
+            routerLinkActive="active-link"
+            >brands</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link fs-6 fw-semibold cursor-pointer position-relative"
+            routerLink="/wishlist"
+          >
+            <i class="fas fa-heart fa-xl text-danger"></i>
+            <span
+              class="position-absolute badge bg-success-subtle text-black rounded rounded-circle end-50 top-50"
+              >{{ wishCount }}</span
+            >
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-user fa-xl text-main"></i>
+          </a>
+          <ul class="dropdown-menu bg-main-light border-0 shadow">
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/UpdatePass"
+                routerLinkActive="active-link"
+                >Update Password</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/UpdateUserInfo"
+                routerLinkActive="active-link"
+                >Update User Info</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold"
+            ><i class="fa fa-brands fa-instagram"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold"
+            ><i class="fa fa-brands fa-facebook"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold"
+            ><i class="fa fa-brands fa-tiktok"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold"
+            ><i class="fa fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold"
+            ><i class="fa fa-brands fa-linkedin-in"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold"
+            ><i class="fa fa-brands fa-youtube"></i
+          ></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link fs-6 fw-semibold">
+            <i class="fa-brands fa-cc-visa"></i
+          ></a>
+        </li> -->
+        <li class="nav-item">
+          <span
+            class="nav-link fs-6 fw-semibold cursor-pointer"
+            (click)="LogOutUser()"
+          >
+            SignOut
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,131 @@
+<!-- <section
+  id="RegisterForm"
+  class="bg-main-light p-4 w-75 rounded rounded-1 mx-auto my-3"
+>
+  <h2>LogIn Now:</h2>
+  <form [formGroup]="LogInForme" (ngSubmit)="handelForm()">
+    <div class="mb-2">
+      <label class="mb-2" for="email"> Email:</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          LogInForme.get('email')?.errors && LogInForme.get('email')?.touched
+        "
+      >
+        <p *ngIf="LogInForme.get('email')?.getError('required')">
+          <i class="fa-solid fa-circle-exclamation"></i> Email Required
+        </p>
+        <p *ngIf="LogInForme.get('email')?.getError('email')">
+          <i class="fa-solid fa-circle-exclamation"></i> Not Valid Email
+        </p>
+      </div>
+    </div>
+    <div class="mb-2">
+      <label class="mb-2" for="password"> Password :</label>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        formControlName="password"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          LogInForme.get('password')?.errors &&
+          LogInForme.get('password')?.touched
+        "
+      >
+        <p *ngIf="LogInForme.get('password')?.getError('required')">
+          <i class="fa-solid fa-circle-exclamation"></i> Password Required
+        </p>
+        <p *ngIf="LogInForme.get('password')?.getError('pattern')">
+          <i class="fa-solid fa-circle-exclamation"></i> password must start
+          with upperCase then from 6 to 20
+        </p>
+      </div>
+    </div>
+    <button
+      class="btn-main fw-semibold d-block ms-auto"
+      [disabled]="LogInForme.invalid"
+    >
+      <i class="fas fa-spinner fa-spin" *ngIf="IsLoadig"></i>
+      LogIN
+    </button>
+    <p class="alert alert-danger" *ngIf="MsgError">{{ MsgError }}</p>
+  </form>
+</section> -->
+<!-- ------------------------------------------ -->
+
+<section
+  id="login"
+  class="bg-main-light p-4 w-75 rounded rounded-2 my-3 mx-auto shadow"
+>
+  <form [formGroup]="LogInForme" (ngSubmit)="LogIn()">
+    <div class="mb-2">
+      <label for="email" class="ms-1">Email</label>
+      <input
+        #email_input
+        type="email"
+        formControlName="email"
+        id="email"
+        class="form-control shadow-none"
+      />
+      <div
+        class="alert alert-danger pb-0"
+        *ngIf="
+          LogInForme.get('email')?.errors &&
+          (LogInForme.get('email')?.touched || email_input.value.length > 0)
+        "
+      >
+        <p *ngIf="LogInForme.get('email')?.getError('required')">
+          Input Is Empty
+        </p>
+        <p *ngIf="LogInForme.get('email')?.getError('email')">
+          Not Valid Email
+        </p>
+      </div>
+    </div>
+    <div class="mb-2">
+      <label for="password" class="ms-1">Password</label>
+      <input
+        #password_input
+        type="password"
+        id="password"
+        formControlName="password"
+        class="form-control shadow-none"
+      />
+      <div
+        class="alert alert-danger pb-0"
+        *ngIf="
+          LogInForme.get('password')?.errors &&
+          (LogInForme.get('password')?.touched ||
+            password_input.value.length > 0)
+        "
+      >
+        <p *ngIf="LogInForme.get('password')?.getError('required')">
+          Password Required
+        </p>
+        <p *ngIf="LogInForme.get('password')?.getError('pattern')">
+          InCorrected Password
+        </p>
+      </div>
+    </div>
+    <div
+      class="d-flex align-items-center justify-content-between w-100 forgetpass"
+    >
+      <button class="btn btn-main">
+        <i class="fas fa-spinner fa-spin" *ngIf="IsLoading"></i>
+        Login
+      </button>
+      <p><a routerLink="/forgetPassword"> Forget Password</a></p>
+    </div>
+
+    <p class="alert alert-danger" *ngIf="Err_msg">{{ Err_msg }}</p>
+  </form>
+</section>

@@ -1,0 +1,12 @@
+<section class="m-4 bg-main-light p-4 rounded rounded-2 shadow">
+  <div class="brands">
+    <h2 class="text-main text-center fw-semibold">All Availabe Brands</h2>
+    <div class="row mt-2 g-3">
+      <div class="col-md-3" *ngFor="let Brand of AllBrands">
+        <div class="img product" (click)="GetSpesificBrand(Brand._id)">
+          <img [src]="Brand.image" alt="" class="w-100" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

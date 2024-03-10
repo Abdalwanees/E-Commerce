@@ -1,0 +1,41 @@
+<section class="bg bg-main-light p-4 my-3 rounded-3 shadow w-75 mx-auto">
+  <h2 class="h5 text-main fw-bold">Online Payment</h2>
+  <form
+    [formGroup]="checkout"
+    (ngSubmit)="handelforme()"
+    class="pt-3 border-top"
+  >
+    <div class="border-bottom">
+      <label for="details" class="fw-semibold ms-1 mt-2"> Details</label>
+      <textarea
+        name="details"
+        id="details"
+        cols="30"
+        rows="2"
+        class="form-control my-2"
+        formControlName="details"
+      ></textarea>
+    </div>
+    <div class="border-bottom">
+      <label for="phone" class="fw-semibold ms-1 mt-2"> Phone</label>
+      <input
+        type="text"
+        id="phone"
+        class="form-control my-2"
+        formControlName="phone"
+      />
+    </div>
+    <div class="border-bottom">
+      <label for="city" class="fw-semibold ms-1 mt-2"> City</label>
+      <input
+        type="text"
+        id="city"
+        class="form-control my-2"
+        formControlName="city"
+      />
+    </div>
+    <button class="btn btn-main fw-semibold my-2">
+      <i class="fa-brands fa-cc-visa"></i> Check Out
+    </button>
+  </form>
+</section>

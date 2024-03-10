@@ -1,0 +1,33 @@
+<section class="m-4 bg-main-light p-4 rounded rounded-2 shadow">
+  <div class="category">
+    <h2 class="text-main text-center fw-semibold">All Categories</h2>
+    <div class="row mt-2 g-3 d-flex align-items-center justify-content-center">
+      <div class="col-md-3" *ngFor="let Categoriey of AllCategories">
+        <div
+          class="img product position-relative cursor-pointer"
+          (click)="GetSpacificCategory(Categoriey._id)"
+        >
+          <img [src]="Categoriey.image" alt="" class="w-100" height="300px" />
+          <div class="layer d-flex align-items-center justify-content-center">
+            <h2 class="h5 text-white fw-bold">{{ Categoriey.name }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="SubCategory pt-5">
+    <h2 class="text-main text-center fw-semibold">All SubCategories</h2>
+    <div class="row mt-2 g-3 d-flex align-items-center justify-content-center">
+      <div class="col-md-3" *ngFor="let SubCategoriey of AllSubCategories">
+        <div
+          (click)="GetSpacificSubCategory(SubCategoriey._id)"
+          class="img product position-relative py-5 bg-main shadow-lg cursor-pointer"
+        >
+          <h3 class="h6 fw-semibold text-center text-white">
+            {{ SubCategoriey.name }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+.cartIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #11bd11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.cartIcon span {
+  font-size: 12px;
+  bottom: 26px;
+  left: 20px;
+  background: #11bd11 !important;
+}
+.cartIcon i:hover,
+.cartIcon i:focus {
+  color: #11bd11;
+}
+.fa-star {
+  font-size: 12px;
+}

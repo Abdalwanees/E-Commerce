@@ -1,0 +1,79 @@
+<section class="w-75 mx-auto py-3 shadow bg-main-light p-3 m-5">
+  <form [formGroup]="UpdatePassForm" (ngSubmit)="UpdatePass()">
+    <label for="currentPassword" class="text-main fw-semibold py-2 ps-1"
+      >Current Password :</label
+    >
+    <input
+      type="password"
+      id="currentPassword"
+      class="form-control"
+      formControlName="currentPassword"
+    />
+    <div>
+      <label for="newPassword" class="text-main fw-semibold py-2 ps-1"
+        >New Password :</label
+      >
+      <input
+        type="password"
+        id="newPassword"
+        class="form-control"
+        formControlName="password"
+        #password_input
+      />
+      <div
+        class="alert alert-danger pb-0"
+        *ngIf="
+          UpdatePassForm.get('password')?.errors &&
+          (UpdatePassForm.get('password')?.touched ||
+            password_input.value.length > 0)
+        "
+      >
+        <p *ngIf="UpdatePassForm.get('password')?.getError('required')">
+          <i class="fa-solid fa-circle-exclamation"></i> Password is Required
+        </p>
+        <p *ngIf="UpdatePassForm.get('password')?.getError('pattern')">
+          <i class="fa-solid fa-circle-exclamation"></i> password must start
+          with upperCase then from 6 to 20
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <label for="ConfirmNewewPassword" class="text-main fw-semibold py-2 ps-1"
+        >Confirm New Password :</label
+      >
+      <input
+        type="password"
+        id="ConfirmNewewPassword"
+        class="form-control"
+        formControlName="rePassword"
+        #RePassword_input
+      />
+      <div
+        class="alert alert-danger pb-0"
+        *ngIf="
+          UpdatePassForm.get('rePassword')?.errors &&
+          (UpdatePassForm.get('rePassword')?.touched ||
+            RePassword_input.value.length > 0)
+        "
+      >
+        <p *ngIf="UpdatePassForm.get('rePassword')?.getError('required')">
+          <i class="fa-solid fa-circle-exclamation"></i> RePassword Required
+        </p>
+        <p *ngIf="UpdatePassForm.get('rePassword')?.getError('missmatch')">
+          <i class="fa-solid fa-circle-exclamation"></i> Repassword not match
+        </p>
+      </div>
+    </div>
+
+    <button class="btn btn-main w-100 my-3">
+      <i class="fas fa-spinner fa-spin" *ngIf="loadingSpinner"></i> Update
+    </button>
+    <p class="alert alert-danger mb-0 m-2" *ngIf="Err_msg">
+      {{ Err_msg }}
+    </p>
+    <p class="alert alert-success mb-0 m-2" *ngIf="Sucess_msg">
+      {{ Sucess_msg }}
+    </p>
+  </form>
+</section>
